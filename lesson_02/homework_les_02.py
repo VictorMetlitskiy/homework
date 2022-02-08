@@ -1,8 +1,8 @@
 # Define function for task 3
 def draw_box():
-    print('#########\n#\t\t#\n#\t\t#\n#\t\t#\n#########')
+    print('#'*9, '\n#\t\t#'*3, '\n', '#'*9, sep='')
     print()
-    print('#\t\t#\n#\t\t#\n#########\n#\t\t#\n#\t\t#')
+    print('#\t\t#\n'*2, '#'*9, '\n#\t\t#'*2, sep='')
 
 
 # Use function print wiht different argements
