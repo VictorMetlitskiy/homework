@@ -40,7 +40,7 @@ while counter < 5:
 
 
 # Task 4.
-math_expression = input('Write answer, please for expression 15 * 11 = ')
+math_expression = input('Write answer, please, for expression 15 * 11 = ')
 if math_expression == '165':
     print('Right answer')
 else:
