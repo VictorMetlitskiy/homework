@@ -1,4 +1,4 @@
-from random import randint, shuffle, sample
+from random import randint, sample
 
 # Task 1.
 number = randint(1, 10)
