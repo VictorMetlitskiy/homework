@@ -2,17 +2,17 @@ from random import randint, sample
 
 # Task 1.
 number = randint(1, 10)
-user_number = input('Guess a number from 1 to 10: ')
 
 while True:
+    user_number = input('Guess a number from 1 to 10: ')
     if not user_number.isdigit():
-        user_number = input('Input digit from 1 to 10: ')
+        continue
     elif int(user_number) > number:
         print(f'Guess number is less that {user_number}')
-        user_number = input('Input guess number: ')
+        continue
     elif int(user_number) < number:
         print(f'Guess number is greater than {user_number}')
-        user_number = input('Input guess number: ')
+        continue
     else:
         print(f'Guess number is {user_number}. You are the winner')
         break
@@ -20,10 +20,11 @@ while True:
 
 # Task 2.
 name = input('Write your name, please: ')
-age = input('Write you age, please: ')
+
 while True:
+    age = input('Write you age, please (digit form): ')
     if not age.isdigit():
-        age = input('Write you age, please (digit form): ')
+        continue
     else:
         print(f'Hello {name}, on your next birthday you’ll be {int(age)+1} years')
         break
