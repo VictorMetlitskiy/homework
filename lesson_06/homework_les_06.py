@@ -64,9 +64,9 @@ while index_num < 100:
 print(list_num2)
 
 # Additional task. Creation game 'Minesweeper'.
+
+
 # Define function for printing grid.
-
-
 def print_grid(matrix):
     for raw in grid:
         for elem in raw:
