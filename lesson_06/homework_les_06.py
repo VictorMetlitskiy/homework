@@ -68,7 +68,7 @@ print(list_num2)
 
 # Define function for printing grid.
 def print_grid(matrix):
-    for raw in grid:
+    for raw in matrix:
         for elem in raw:
             print(elem, end=' ')
         print()
