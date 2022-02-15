@@ -10,7 +10,7 @@ task_text = '''
 
 2. Правила найменування змінних у Python:
 - назви змінних мають складатися з літер у нижньому регістрі та цифр;
-- дозволяється використовувати символ нижнього підкреклювання;
+- дозволяється використовувати символ нижнього підкреслювання;
 - назва змінної має відображати позначуване нею значення;
 - назва змінної не може починатися з цифри.
 Приклад невдалої назви змінної:
@@ -68,12 +68,11 @@ print(f'{len(surname)}! = {multiplication}')
 # Task 6.
 string_to_truncate = 'I have a beautiful cat!'
 
-while len(string_to_truncate) > 0:
+while len(string_to_truncate) > 1:
     string_to_truncate = string_to_truncate[:-1]
-    if len(string_to_truncate) != 0:
-        print(string_to_truncate)
-    else:
-        print("Nothing's left here.")
+    print(string_to_truncate)
+else:
+    print("Nothing's left here.")
 
 '''
 Просунутий рівень
