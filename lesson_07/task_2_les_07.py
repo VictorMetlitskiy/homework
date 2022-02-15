@@ -1,4 +1,5 @@
-# Task 2.
+# Task 2. Make a program that has some sentence (a string) on input and returns a
+# dict containing all unique words as keys and the number of occurrences as values.
 
 
 def compute_total_price(dict_quantity, dict_price):
