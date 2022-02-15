@@ -1,5 +1,5 @@
-# Task 2. Make a program that has some sentence (a string) on input and returns a
-# dict containing all unique words as keys and the number of occurrences as values.
+# Task 2. Create a function which takes as input two dicts with structure
+# mentioned above, then computes and returns the total price of stock.
 
 
 def compute_total_price(dict_quantity, dict_price):
