@@ -19,8 +19,8 @@ for elem in sorted_list:
     print(elem)
 print()
 
-# Sort list of dictionary by value of key 'year' using method itemgetter.
-sorted_list = sorted(vehicles, key=itemgetter('year'))
+# Sort list of dictionary by value of key 'type' using method itemgetter.
+sorted_list = sorted(vehicles, key=itemgetter('type'))
 for elem in sorted_list:
     print(elem)
 print()
