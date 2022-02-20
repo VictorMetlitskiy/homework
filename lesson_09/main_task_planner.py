@@ -69,7 +69,8 @@ while True:
             continue
         sorted_by_priority = sort_by_priority(lst_tasks)
         for elem in sorted_by_priority:
-            print({elem['id']}, {elem['title']}, {elem['status']}, {elem['priority']})
+            print({'id': elem['id']}, {'title': elem['title']}, {'status': elem['status']},
+                  {'priority': elem['priority']})
     if number_function == 8:
         if len(lst_tasks) == 0:
             print('List of tasks is empty.')
