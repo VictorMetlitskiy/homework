@@ -115,9 +115,6 @@ def sort_by_priority(lst):
     """Function sorts the tasks by the key 'priority' and prints list of tasks.
     """
     try:
-        if len(lst) == 0:
-            print('List of tasks is empty.')
-            return
         return sorted(lst, key=lambda d: d['priority'], reverse=True)
     except TypeError as err:
         print(err)
