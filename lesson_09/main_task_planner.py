@@ -64,10 +64,16 @@ while True:
         search_task = find_by_name(lst_tasks)
         print(search_task)
     if number_function == 7:
+        if len(lst_tasks) == 0:
+            print('List of tasks is empty.')
+            continue
         sorted_by_priority = sort_by_priority(lst_tasks)
         for elem in sorted_by_priority:
             print({elem['id']}, {elem['title']}, {elem['status']}, {elem['priority']})
     if number_function == 8:
+        if len(lst_tasks) == 0:
+            print('List of tasks is empty.')
+            continue
         sorted_lst = find_overdue_task(lst_tasks)
         for item in sorted_lst:
             print({'id': item['id']}, {'item': item['title']}, {'status': item['status']},
