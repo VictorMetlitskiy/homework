@@ -11,8 +11,8 @@ def catch_oops():
         oops()
     except IndexError as error:
         print(error)
-    except KeyError:
-        print('KeyError occurred.')
+    except KeyError as error:
+        print(error, 'KeyError occurred.')
 
 
 catch_oops()
