@@ -1,7 +1,7 @@
 def favorite_movie(name):
     """Function make answer with argument 'name'.
     """
-    answer = f'My favorite movie is named {name}.'
+    answer = f'My favorite movie is named "{name}".'
     print(answer)
 
 
