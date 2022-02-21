@@ -3,10 +3,10 @@ def make_country(country, capital):
     """
     dict_country = dict()
     dict_country[country] = capital
-    return dict_country
+    print(dict_country)
 
 
 if __name__ == '__main__':
     name_country = input('Write, please, name of country: ')
     name_capital = input('Write, please, capital of country: ')
-    print(make_country(name_country, name_capital))
+    make_country(name_country, name_capital)
