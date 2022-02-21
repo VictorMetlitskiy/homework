@@ -22,9 +22,9 @@ def get_title():
             if 0 < len(title) <= 60:
                 return title
             else:
-                raise ValueError
-        except ValueError:
-            print(ValueError, 'Type name of task (obligatory field, up to 60 characters).')
+                raise ValueError('Invalid value. Type name of task (obligatory field, up to 60 characters).')
+        except ValueError as err:
+            print(err)
 
 
 def get_description():
@@ -46,9 +46,9 @@ def get_priority():
             elif len(priority) == 0 or int(priority) == 1:
                 return priority_default
             else:
-                raise ValueError
+                raise ValueError('Invalid value. Type number in digit form (from 1 to 10)')
         except ValueError as err:
-            print(err, 'Type number in digit form (from 1 to 10)')
+            print(err)
 
 
 def get_due_date():
@@ -59,8 +59,8 @@ def get_due_date():
             due_date = input('Type the end date of the task in format DD.MM.YYYY: ')
             date_object = datetime.strptime(due_date, '%d.%m.%Y').date()
             return date_object
-        except ValueError:
-            print(ValueError, 'Format date must be DD.MM.YYYY')
+        except ValueError as err:
+            print(err, 'Format date must be DD.MM.YYYY')
 
 
 def get_id_for_edit(lst):
@@ -72,11 +72,11 @@ def get_id_for_edit(lst):
             if lst[i]['id'] == get_id_edit:
                 return lst[i]
         else:
-            raise KeyError
+            raise KeyError('Key is invalid')
     except ValueError as err:
         print(err)
-    except KeyError:
-        print(KeyError)
+    except KeyError as err:
+        print(err)
 
 
 def get_edit_title(elem):
@@ -90,9 +90,9 @@ def get_edit_title(elem):
             elem['title'] = new_title
             return elem
         else:
-            raise ValueError
-    except ValueError:
-        print(ValueError, 'Type name of task (obligatory field, up to 60 characters).')
+            raise ValueError('Invalid value. Type name of task (obligatory field, up to 60 characters).')
+    except ValueError as err:
+        print(err)
 
 
 def get_edit_description(elem):
@@ -117,9 +117,9 @@ def get_edit_priority(elem):
             elem['priority'] = new_priority
             return elem
         else:
-            raise ValueError
-    except ValueError:
-        print(ValueError)
+            raise ValueError('Invalid value. Characters must be number from 1 to 10.')
+    except ValueError as err:
+        print(err)
 
 
 def get_edit_status(elem):
@@ -133,9 +133,9 @@ def get_edit_status(elem):
             elem['status'] = new_status
             return elem
         else:
-            raise ValueError
-    except ValueError:
-        print(ValueError)
+            raise ValueError("Value error. New meaning of status 'in progress' or 'done'.")
+    except ValueError as err:
+        print(err)
 
 
 def get_edit_due_date(elem):
