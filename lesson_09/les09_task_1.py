@@ -1,7 +1,7 @@
 def oops():
     """Function causes an IndexError
     """
-    raise IndexError
+    raise IndexError('Index out of the range')
 
 
 def catch_oops():
@@ -9,8 +9,8 @@ def catch_oops():
     """
     try:
         oops()
-    except IndexError:
-        print('IndexError occurred.')
+    except IndexError as error:
+        print(error)
     except KeyError:
         print('KeyError occurred.')
 
