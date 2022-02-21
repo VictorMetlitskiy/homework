@@ -24,9 +24,9 @@ def select_function():
             if 0 <= function_answer <= 8:
                 return function_answer
             else:
-                raise ValueError
-        except ValueError:
-            print(ValueError, 'Type number in digit form (from 1 to 8)')
+                raise ValueError('Invalid value. Type number in digit form (from 1 to 8).')
+        except ValueError as err:
+            print(err)
 
 
 def execute_func_0():
@@ -51,11 +51,11 @@ def review_task_detail(lst):
             if lst[i]['id'] == get_id_review:
                 return lst[i]
         else:
-            raise KeyError
+            raise KeyError('Invalid key. Key is not found.')
     except ValueError as err:
         print(err)
-    except KeyError:
-        print(KeyError)
+    except KeyError as err:
+        print(err)
 
 
 def edit_task(elem):
@@ -88,27 +88,25 @@ def delete_task(lst):
                 del lst[i]
                 return
         else:
-            raise KeyError
+            raise KeyError('Invalid key. Key is not found.')
     except ValueError as err:
         print(err)
-    except KeyError:
-        print(KeyError)
+    except KeyError as err:
+        print(err)
 
 
 def find_by_name(lst):
     """Function finds the task by title (part of title).
     """
     try:
-        if len(lst) == 0:
-            print('List of the tasks is empty.')
         name_task = input('Type name of task for searching: ').lower()
         for i in range(len(lst)):
             if name_task in lst[i]['title'].lower():
-                return lst[i]
+                return print(lst[i])
         else:
-            raise ValueError
-    except ValueError:
-        print(ValueError)
+            raise ValueError('Invalid value.')
+    except ValueError as err:
+        print(err)
 
 
 def sort_by_priority(lst):
@@ -118,8 +116,8 @@ def sort_by_priority(lst):
         return sorted(lst, key=lambda d: d['priority'], reverse=True)
     except TypeError as err:
         print(err)
-    except ValueError:
-        print(ValueError)
+    except ValueError as err:
+        print(err)
 
 
 def find_overdue_task(lst):
@@ -132,7 +130,7 @@ def find_overdue_task(lst):
         return lst_overdue_task
     except TypeError as err:
         print(err)
-    except ValueError:
-        print(ValueError)
-    except KeyError:
-        print(KeyError)
+    except ValueError as err:
+        print(err)
+    except KeyError as err:
+        print(err)
