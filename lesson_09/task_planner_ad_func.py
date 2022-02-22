@@ -114,7 +114,7 @@ def get_edit_priority(elem):
         if len(new_priority) == 0:
             return elem
         elif 1 <= int(new_priority) <= 10 and int(new_priority) != elem['priority']:
-            elem['priority'] = new_priority
+            elem['priority'] = int(new_priority)
             return elem
         else:
             raise ValueError('Invalid value. Characters must be number from 1 to 10.')
