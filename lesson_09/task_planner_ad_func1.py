@@ -154,7 +154,7 @@ def get_edit_due_date(elem):
 
 
 def change_str_to_date(lst):
-    """Function changes str type to date type.
+    """Function changes date type to str type.
     """
     for elem in lst:
         elem['due_date'] = datetime.strptime(elem['due_date'], '%d.%m.%Y').date()
