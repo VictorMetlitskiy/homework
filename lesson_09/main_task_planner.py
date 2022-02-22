@@ -1,6 +1,4 @@
-import json
-import os.path
-
+from task_planner_main_func import read_file
 from task_planner_main_func import print_cli
 from task_planner_main_func import select_function
 from task_planner_main_func import execute_func_0
@@ -15,30 +13,20 @@ from task_planner_main_func import find_overdue_task
 from task_planner_main_func import save_cur_tasks
 
 from task_planner_ad_func import get_id_for_edit
-from task_planner_ad_func import change_date_to_str
-from task_planner_ad_func import change_str_to_date
 
 lst_command_line = ['Command Line Interface', 'Finish work', 'Create new task', 'Review list of tasks',
                     'Review detail of task', 'Edit a task', 'Delete a task', 'Find by name', 'Sort by priority',
                     'Find overdue task', 'Save the current tasks'
                     ]
 
-lst_tasks = []
 lst_keys = ['id', 'title', 'description', 'priority', 'status', 'due_date']
-
-if os.path.exists('./data/lst_tasks.json'):
-    with open('./data/lst_tasks.json') as file_object:
-        lst_tasks = json.load(file_object)
-        lst_tasks = change_str_to_date(lst_tasks)
+lst_tasks = read_file()
 
 while True:
     print_cli(lst_command_line)
     number_function = select_function()
     if number_function == 0:
-        lst_tasks = change_date_to_str(lst_tasks)
-        with open('./data/lst_tasks.json', 'w') as file_object:
-            json.dump(lst_tasks, file_object)
-        execute_func_0()
+        execute_func_0(lst_tasks)
         break
     if number_function == 1:
         dict_task = create_task(lst_tasks, lst_keys)
