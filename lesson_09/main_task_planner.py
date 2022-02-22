@@ -25,10 +25,12 @@ lst_command_line = ['Command Line Interface', 'Finish work', 'Create new task', 
 
 lst_tasks = []
 lst_keys = ['id', 'title', 'description', 'priority', 'status', 'due_date']
+
 if os.path.exists('./data/lst_tasks.json'):
     with open('./data/lst_tasks.json') as file_object:
         lst_tasks = json.load(file_object)
         lst_tasks = change_str_to_date(lst_tasks)
+
 while True:
     print_cli(lst_command_line)
     number_function = select_function()
