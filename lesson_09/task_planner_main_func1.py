@@ -1,30 +1,12 @@
 from datetime import datetime
 import os.path
 import csv
-import json
 
-from task_planner_ad_func1 import get_id
-from task_planner_ad_func1 import get_title
-from task_planner_ad_func1 import get_description
-from task_planner_ad_func1 import get_priority
-from task_planner_ad_func1 import get_due_date
 from task_planner_ad_func1 import get_edit_title
 from task_planner_ad_func1 import get_edit_description
 from task_planner_ad_func1 import get_edit_priority
 from task_planner_ad_func1 import get_edit_status
 from task_planner_ad_func1 import get_edit_due_date
-from task_planner_ad_func1 import change_date_to_str
-from task_planner_ad_func1 import change_str_to_date
-
-
-def read_file():
-    if os.path.exists('./data/lst_tasks.json'):
-        with open('./data/lst_tasks.json') as file_object:
-            lst_tasks = json.load(file_object)
-            lst_tasks = change_str_to_date(lst_tasks)
-            return lst_tasks
-    else:
-        return []
 
 
 def print_cli(lst):
@@ -49,25 +31,10 @@ def select_function():
             print(err)
 
 
-def execute_func_0(lst):
+def execute_func_0():
     """Function interrupts executing program.
     """
-    lst = change_date_to_str(lst)
-    with open('./data/lst_tasks.json', 'w') as file_object:
-        json.dump(lst, file_object)
     print('Work is finished.')
-
-
-def create_task(lst_t, lst_k):
-    task_id = get_id(lst_t)
-    task_title = get_title()
-    task_description = get_description()
-    task_priority = get_priority()
-    task_status = 'pending'
-    task_due_date = get_due_date()
-    lst_values = [task_id, task_title, task_description, task_priority, task_status, task_due_date]
-    dict_task = {lst_k[i]: lst_values[i] for i in range(len(lst_k))}
-    return dict_task
 
 
 def review_tasks_list(lst):
