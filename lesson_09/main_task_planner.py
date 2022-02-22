@@ -1,8 +1,6 @@
 import json
 import os.path
 
-
-
 from task_planner_main_func import print_cli
 from task_planner_main_func import select_function
 from task_planner_main_func import execute_func_0
