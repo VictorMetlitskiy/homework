@@ -2,8 +2,6 @@ from datetime import datetime
 import os.path
 import csv
 
-
-
 from task_planner_ad_func import get_edit_title
 from task_planner_ad_func import get_edit_description
 from task_planner_ad_func import get_edit_priority
