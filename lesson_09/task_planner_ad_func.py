@@ -151,3 +151,19 @@ def get_edit_due_date(elem):
             return elem
     except ValueError as err:
         print(err, 'Format date must be DD.MM.YYYY')
+
+
+def change_str_to_date(lst):
+    """Function changes date type to str type.
+    """
+    for elem in lst:
+        elem['due_date'] = datetime.strptime(elem['due_date'], '%d.%m.%Y').date()
+    return lst
+
+
+def change_date_to_str(lst):
+    """Function changes date type to str type.
+    """
+    for elem in lst:
+        elem['due_date'] = elem['due_date'].strftime('%d.%m.%Y')
+    return lst
