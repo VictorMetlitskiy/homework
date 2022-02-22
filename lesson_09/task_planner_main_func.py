@@ -1,4 +1,8 @@
 from datetime import datetime
+import os.path
+import csv
+
+
 
 from task_planner_ad_func import get_edit_title
 from task_planner_ad_func import get_edit_description
@@ -20,11 +24,11 @@ def select_function():
     """
     while True:
         try:
-            function_answer = int(input('Type number of desirable function (from 0 to 8): '))
-            if 0 <= function_answer <= 8:
+            function_answer = int(input('Type number of desirable function (from 0 to 9): '))
+            if 0 <= function_answer <= 9:
                 return function_answer
             else:
-                raise ValueError('Invalid value. Type number in digit form (from 1 to 8).')
+                raise ValueError('Invalid value. Type number in digit form (from 1 to 9).')
         except ValueError as err:
             print(err)
 
@@ -133,4 +137,24 @@ def find_overdue_task(lst):
     except ValueError as err:
         print(err)
     except KeyError as err:
+        print(err)
+
+
+def save_cur_tasks(lst_t, lst_k):
+    """Function saves the current tasks.
+        """
+    try:
+        get_name_file = input('Type name of file (without extension): ')
+        if not os.path.exists(f'./data/{get_name_file}.csv'):
+            with open(f'./data/{get_name_file}.csv', 'w') as file_object:
+                writer = csv.DictWriter(file_object, fieldnames=lst_k)
+                writer.writeheader()
+                writer.writerows(lst_t)
+                print('File is saved successfully.')
+        else:
+            print('A file with the same name already exists.')
+            return
+    except FileNotFoundError as err:
+        print(err)
+    except ValueError as err:
         print(err)
