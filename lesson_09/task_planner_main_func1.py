@@ -3,18 +3,18 @@ import os.path
 import csv
 import json
 
-from task_planner_ad_func import get_id
-from task_planner_ad_func import get_title
-from task_planner_ad_func import get_description
-from task_planner_ad_func import get_priority
-from task_planner_ad_func import get_due_date
-from task_planner_ad_func import get_edit_title
-from task_planner_ad_func import get_edit_description
-from task_planner_ad_func import get_edit_priority
-from task_planner_ad_func import get_edit_status
-from task_planner_ad_func import get_edit_due_date
-from task_planner_ad_func import change_date_to_str
-from task_planner_ad_func import change_str_to_date
+from task_planner_ad_func1 import get_id
+from task_planner_ad_func1 import get_title
+from task_planner_ad_func1 import get_description
+from task_planner_ad_func1 import get_priority
+from task_planner_ad_func1 import get_due_date
+from task_planner_ad_func1 import get_edit_title
+from task_planner_ad_func1 import get_edit_description
+from task_planner_ad_func1 import get_edit_priority
+from task_planner_ad_func1 import get_edit_status
+from task_planner_ad_func1 import get_edit_due_date
+from task_planner_ad_func1 import change_date_to_str
+from task_planner_ad_func1 import change_str_to_date
 
 
 def read_file():
