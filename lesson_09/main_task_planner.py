@@ -4,6 +4,7 @@ import os.path
 from task_planner_main_func import print_cli
 from task_planner_main_func import select_function
 from task_planner_main_func import execute_func_0
+from task_planner_main_func import create_task
 from task_planner_main_func import review_tasks_list
 from task_planner_main_func import review_task_detail
 from task_planner_main_func import edit_task
@@ -14,13 +15,9 @@ from task_planner_main_func import find_overdue_task
 from task_planner_main_func import save_cur_tasks
 
 from task_planner_ad_func import get_id_for_edit
-from task_planner_ad_func import get_id
-from task_planner_ad_func import get_title
-from task_planner_ad_func import get_description
-from task_planner_ad_func import get_priority
-from task_planner_ad_func import get_due_date
 from task_planner_ad_func import change_date_to_str
 from task_planner_ad_func import change_str_to_date
+
 lst_command_line = ['Command Line Interface', 'Finish work', 'Create new task', 'Review list of tasks',
                     'Review detail of task', 'Edit a task', 'Delete a task', 'Find by name', 'Sort by priority',
                     'Find overdue task', 'Save the current tasks'
@@ -42,14 +39,7 @@ while True:
         execute_func_0()
         break
     if number_function == 1:
-        task_id = get_id(lst_tasks)
-        task_title = get_title()
-        task_description = get_description()
-        task_priority = get_priority()
-        task_status = 'pending'
-        task_due_date = get_due_date()
-        lst_values = [task_id, task_title, task_description, task_priority, task_status, task_due_date]
-        dict_task = {lst_keys[i]: lst_values[i] for i in range(len(lst_keys))}
+        dict_task = create_task(lst_tasks, lst_keys)
         lst_tasks.append(dict_task)
         print('Task has been created successfully.')
     if number_function == 2:
