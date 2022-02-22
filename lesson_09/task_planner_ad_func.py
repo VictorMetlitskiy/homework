@@ -1,7 +1,5 @@
 from datetime import datetime
 
-
-
 def get_id(lst):
     """Function defines id of task.
     """
