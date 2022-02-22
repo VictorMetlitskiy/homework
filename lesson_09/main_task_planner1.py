@@ -1,18 +1,18 @@
-from task_planner_main_func import read_file
-from task_planner_main_func import print_cli
-from task_planner_main_func import select_function
-from task_planner_main_func import execute_func_0
-from task_planner_main_func import create_task
-from task_planner_main_func import review_tasks_list
-from task_planner_main_func import review_task_detail
-from task_planner_main_func import edit_task
-from task_planner_main_func import delete_task
-from task_planner_main_func import find_by_name
-from task_planner_main_func import sort_by_priority
-from task_planner_main_func import find_overdue_task
-from task_planner_main_func import save_cur_tasks
+from task_planner_main_func1 import read_file
+from task_planner_main_func1 import print_cli
+from task_planner_main_func1 import select_function
+from task_planner_main_func1 import execute_func_0
+from task_planner_main_func1 import create_task
+from task_planner_main_func1 import review_tasks_list
+from task_planner_main_func1 import review_task_detail
+from task_planner_main_func1 import edit_task
+from task_planner_main_func1 import delete_task
+from task_planner_main_func1 import find_by_name
+from task_planner_main_func1 import sort_by_priority
+from task_planner_main_func1 import find_overdue_task
+from task_planner_main_func1 import save_cur_tasks
 
-from task_planner_ad_func import get_id_for_edit
+from task_planner_ad_func1 import get_id_for_edit
 
 lst_command_line = ['Command Line Interface', 'Finish work', 'Create new task', 'Review list of tasks',
                     'Review detail of task', 'Edit a task', 'Delete a task', 'Find by name', 'Sort by priority',
