@@ -1,6 +1,7 @@
 from datetime import datetime
 import os.path
 import csv
+import json
 
 from task_planner_ad_func import get_id
 from task_planner_ad_func import get_title
@@ -12,6 +13,18 @@ from task_planner_ad_func import get_edit_description
 from task_planner_ad_func import get_edit_priority
 from task_planner_ad_func import get_edit_status
 from task_planner_ad_func import get_edit_due_date
+from task_planner_ad_func import change_date_to_str
+from task_planner_ad_func import change_str_to_date
+
+
+def read_file():
+    if os.path.exists('./data/lst_tasks.json'):
+        with open('./data/lst_tasks.json') as file_object:
+            lst_tasks = json.load(file_object)
+            lst_tasks = change_str_to_date(lst_tasks)
+            return lst_tasks
+    else:
+        return []
 
 
 def print_cli(lst):
@@ -36,9 +49,12 @@ def select_function():
             print(err)
 
 
-def execute_func_0():
+def execute_func_0(lst):
     """Function interrupts executing program.
     """
+    lst = change_date_to_str(lst)
+    with open('./data/lst_tasks.json', 'w') as file_object:
+        json.dump(lst, file_object)
     print('Work is finished.')
 
 
