@@ -25,12 +25,6 @@ for elem in sorted_list:
     print(elem)
 print()
 
-# Sort list of dictionary by key.
-sorted_list = [{key: value for key, value in sorted(elem.items(), key=itemgetter(0))} for elem in vehicles]
-for elem in sorted_list:
-    print(elem)
-print()
-
 # Sort list of dictionary by key through lambda function. Compared data must be of the same type.
 dict_unsorted = {'weight': 1500, 'code': 10000, 'year': 2000}
 dict_sorted = {key: value for key, value in sorted(dict_unsorted.items(), key=lambda item: item[0])}
